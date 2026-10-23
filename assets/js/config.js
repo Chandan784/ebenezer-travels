@@ -1,6 +1,6 @@
 
 export const siteConfig = {
-  name: "EBENEZER TOUR AND TRAVELS",
+  name: "DEBIKA TOUR AND TRAVELS",
 
   phoneDisplay: "063705 55619",
   phoneCountryCode: "91",
