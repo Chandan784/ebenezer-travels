@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2b26">
+  <meta name="description" content="EBENEZER TOUR AND TRAVELS in Bhubaneswar, Odisha. Enquire about car rentals, family trips, group travel, honeymoons, hotels and tours.">
+  <title>EBENEZER TOUR AND TRAVELS | Explore More</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Configurable Tailwind Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: "var(--color-primary, #0b2b26)",
+            forestHover: "var(--color-primary-hover, #164e43)",
+            mint: "var(--color-secondary, #d9f99d)",
+            orange: "var(--color-accent, #047857)",
+            sand: "var(--color-background, #f7f7f2)"
+          },
+          fontFamily: {
+            sans: ["DM Sans", "sans-serif"],
+            heading: ["Manrope", "sans-serif"]
+          },
+          boxShadow: {
+            card: "0 15px 45px rgb(15 23 42 / 7%)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Small utility styles for animation and native controls only -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity var(--animation-duration, 700ms) ease,
+        transform var(--animation-duration, 700ms) cubic-bezier(.2,.7,.2,1);
+      transition-delay: var(--animation-delay, 0ms);
+    }
+
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-enter {
+      animation: hero-enter 850ms cubic-bezier(.2,.7,.2,1) both;
+    }
+
+    .hero-enter-delay {
+      animation-delay: 160ms;
+    }
+
+    @keyframes hero-enter {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .whatsapp-pulse {
+      animation: whatsapp-pulse 2.8s ease-in-out infinite;
+    }
+
+    @keyframes whatsapp-pulse {
+      0%, 100% {
+        box-shadow: 0 8px 28px rgb(0 0 0 / 15%);
+      }
+      50% {
+        box-shadow: 0 8px 30px rgb(37 211 102 / 35%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      [data-animate] {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-sand font-sans text-slate-800 antialiased">
+
+  <!-- Announcement Bar -->
+  <div class="bg-forest px-4 py-2 text-center text-xs text-white">
+    <i class="fa-solid fa-location-dot mr-1 text-mint"></i>
+    Your journey begins with us
+    <span class="mx-2 text-white/40">•</span>
+    <a href="#contact" class="font-bold text-mint hover:underline">
+      Contact us to plan your trip
+    </a>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
+    <nav class="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+
+      <a href="#home" class="flex shrink-0 items-center gap-3" aria-label="Ebenezer Tour and Travels home">
+        <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-forest text-xl text-mint">
+          <i class="fa-solid fa-compass"></i>
+        </span>
+        <span>
+          <strong class="block font-heading text-sm font-extrabold tracking-wide text-forest sm:text-base">
+            EBENEZER
+          </strong>
+          <small class="mt-0.5 block text-[9px] font-bold tracking-[.17em] text-slate-500">
+            TOUR AND TRAVELS
+          </small>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-5 lg:flex xl:gap-7">
+        <a href="#home" class="text-sm font-semibold text-slate-700 transition hover:text-orange">Home</a>
+        <a href="#destinations" class="text-sm font-semibold text-slate-700 transition hover:text-orange">Destinations</a>
+        <a href="#about" class="text-sm font-semibold text-slate-700 transition hover:text-orange">About</a>
+        <a href="#services" class="text-sm font-semibold text-slate-700 transition hover:text-orange">Services</a>
+        <a href="#reviews" class="text-sm font-semibold text-slate-700 transition hover:text-orange">Reviews</a>
+        <a href="#contact" class="text-sm font-semibold text-slate-700 transition hover:text-orange">Contact</a>
+      </div>
+
+      <a href="#contact" class="hidden items-center gap-2 rounded-full bg-forest px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-forestHover md:inline-flex">
+        Plan your trip <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <button id="menuToggle" type="button" class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-lg text-forest transition hover:bg-sand lg:hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+   
+<!-- Mobile Menu -->
+<div
+  id="mobileMenu"
+  hidden
+  class="border-t border-slate-200 bg-white px-4 pb-5 pt-3 shadow-lg lg:hidden"
+>
+  <a href="#home" class="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-sand">Home</a>
+  <a href="#destinations" class="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-sand">Destinations</a>
+  <a href="#about" class="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-sand">About</a>
+  <a href="#services" class="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-sand">Services</a>
+  <a href="#reviews" class="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-sand">Reviews</a>
+  <a href="#contact" class="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-sand">Contact</a>
+
+  <a
+    href="#contact"
+    class="mt-3 flex items-center justify-center gap-2 rounded-xl bg-forest px-4 py-3 text-sm font-bold text-white"
+  >
+    Plan your trip <i class="fa-solid fa-arrow-right"></i>
+  </a>
+</div>
+
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative isolate flex min-h-[590px] items-center overflow-hidden bg-forest bg-cover bg-center text-white sm:min-h-[650px]" style="background-image: linear-gradient(90deg, rgb(4 23 19 / 90%) 0%, rgb(4 23 19 / 70%) 48%, rgb(4 23 19 / 25%) 100%), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=90')">
+
+      <div class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.35fr_.65fr] lg:px-10 lg:py-28">
+
+        <div class="hero-enter max-w-3xl">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2.5 text-[10px] font-bold tracking-[.15em] text-mint sm:text-xs">
+            <i class="fa-solid fa-earth-asia"></i>
+            TRAVEL. EXPLORE. EXPERIENCE.
+          </span>
+
+          <h1 class="mt-7 font-heading text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-6xl lg:text-7xl">
+            Discover places.<br>
+            Create <span class="text-mint">memories.</span>
+          </h1>
+
+          <p class="mt-6 max-w-xl text-sm leading-8 text-white/80 sm:text-base">
+            From peaceful getaways to exciting road trips, let us help you plan a journey that feels special from beginning to end.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#contact" class="inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-mint px-7 py-4 text-sm font-extrabold text-forest transition hover:-translate-y-1 hover:shadow-lg">
+              Start planning <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#destinations" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/50 px-7 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-forest">
+              Explore destinations
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-col gap-3 text-xs text-white/85 sm:flex-row sm:gap-6">
+            <span><i class="fa-solid fa-circle-check mr-2 text-mint"></i>Personalised travel enquiries</span>
+            <span><i class="fa-solid fa-circle-check mr-2 text-mint"></i>Friendly assistance</span>
+          </div>
+        </div>
+
+        <div class="hero-enter hero-enter-delay hidden justify-self-end rounded-3xl border border-white/20 bg-white/10 p-7 backdrop-blur-lg lg:block">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint text-xl text-forest">
+            <i class="fa-solid fa-route"></i>
+          </span>
+          <p class="mt-6 text-[10px] font-extrabold tracking-[.15em] text-mint">YOUR NEXT ADVENTURE</p>
+          <h2 class="mt-3 font-heading text-3xl font-extrabold leading-snug">
+            One journey.<br>Many memories.
+          </h2>
+          <a href="#services" class="mt-6 inline-flex items-center gap-2 text-xs font-bold hover:text-mint">
+            Find your travel experience <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <a href="#destinations" class="absolute bottom-5 left-1/2 hidden -translate-x-1/2 items-center gap-3 text-xs text-white/75 sm:flex">
+        <span class="flex h-6 w-4 justify-center rounded-full border border-white/60 pt-1">
+          <span class="h-1 w-0.5 rounded-full bg-white"></span>
+        </span>
+        Scroll to explore
+      </a>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="border-b border-slate-200 bg-white px-4 py-6 sm:px-8">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-5 md:grid-cols-4">
+        <div class="flex items-center gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand text-lg text-orange"><i class="fa-solid fa-car"></i></span>
+          <span><strong class="block text-xs font-extrabold text-forest sm:text-sm">Car Rentals</strong><small class="mt-1 block text-[10px] text-slate-500 sm:text-xs">Travel at your pace</small></span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand text-lg text-orange"><i class="fa-solid fa-people-group"></i></span>
+          <span><strong class="block text-xs font-extrabold text-forest sm:text-sm">Group Travel</strong><small class="mt-1 block text-[10px] text-slate-500 sm:text-xs">Journeys together</small></span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand text-lg text-orange"><i class="fa-solid fa-hotel"></i></span>
+          <span><strong class="block text-xs font-extrabold text-forest sm:text-sm">Hotel Enquiries</strong><small class="mt-1 block text-[10px] text-slate-500 sm:text-xs">Explore stay options</small></span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand text-lg text-orange"><i class="fa-solid fa-map-location-dot"></i></span>
+          <span><strong class="block text-xs font-extrabold text-forest sm:text-sm">Tour Planning</strong><small class="mt-1 block text-[10px] text-slate-500 sm:text-xs">Plan your getaway</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destinations -->
+    <section id="destinations" class="bg-white px-4 py-20 sm:px-8 sm:py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto mb-12 max-w-2xl text-center" data-animate>
+          <span class="text-[10px] font-extrabold tracking-[.2em] text-orange">GET INSPIRED</span>
+          <h2 class="mt-3 font-heading text-3xl font-extrabold tracking-tight text-forest sm:text-4xl">
+            Places worth <span class="text-orange">exploring</span>
+          </h2>
+          <p class="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-500">
+            Discover ideas for your next trip. Contact us to discuss your destination and travel arrangements.
+          </p>
+        </div>
+
+        <!-- Cards rendered from data.js -->
+        <div id="destinationGrid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+
+        <div class="mt-10 text-center">
+          <a href="#contact" class="text-sm text-slate-500 hover:text-orange">
+            Have another destination in mind?
+            <strong class="ml-1 text-orange">Talk to us <i class="fa-solid fa-arrow-right ml-1"></i></strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="overflow-hidden bg-sand px-4 py-20 sm:px-8 sm:py-24">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
+
+        <div class="relative mx-auto w-full max-w-xl" data-animate>
+          <div class="absolute bottom-0 right-0 h-[65%] w-[58%] rounded-3xl bg-mint"></div>
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85" alt="Beautiful mountain landscape" loading="lazy" class="relative z-10 h-[350px] w-[90%] rounded-3xl object-cover shadow-card sm:h-[440px]">
+          <div class="absolute bottom-6 right-0 z-20 flex max-w-[260px] items-center gap-3 rounded-2xl bg-white p-4 shadow-card sm:bottom-8">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-forest text-lg text-mint"><i class="fa-solid fa-compass"></i></span>
+            <span><strong class="block text-xs font-extrabold text-forest">Your journey, your way</strong><small class="mt-1 block text-[10px] text-slate-500">Travel planning made personal</small></span>
+          </div>
+        </div>
+
+        <div data-animate>
+          <span class="text-[10px] font-extrabold tracking-[.2em] text-orange">ABOUT OUR COMPANY</span>
+          <h2 class="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-forest sm:text-4xl">
+            Every great memory starts with a <span class="text-orange">journey.</span>
+          </h2>
+
+          <p class="mt-5 text-sm leading-8 text-slate-500">
+            At EBENEZER TOUR AND TRAVELS, we help travellers explore their options for holidays, road trips, accommodation and memorable experiences.
+          </p>
+          <p class="mt-4 text-sm leading-8 text-slate-500">
+            Tell us where you want to go, when you plan to travel and what matters to you. We will discuss suitable arrangements based on your requirements.
+          </p>
+
+          <ul class="mt-6 space-y-4 text-sm text-slate-700">
+            <li><i class="fa-solid fa-circle-check mr-2 text-orange"></i>Travel plans based on your needs</li>
+            <li><i class="fa-solid fa-circle-check mr-2 text-orange"></i>Assistance with travel enquiries</li>
+            <li><i class="fa-solid fa-circle-check mr-2 text-orange"></i>Friendly communication</li>
+          </ul>
+
+          <a href="#contact" class="mt-8 inline-flex items-center gap-2 rounded-full bg-forest px-6 py-4 text-sm font-bold text-white transition hover:-translate-y-1 hover:bg-forestHover">
+            Let's plan together <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="bg-white px-4 py-20 sm:px-8 sm:py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto mb-12 max-w-2xl text-center" data-animate>
+          <span class="text-[10px] font-extrabold tracking-[.2em] text-orange">WHAT WE OFFER</span>
+          <h2 class="mt-3 font-heading text-3xl font-extrabold tracking-tight text-forest sm:text-4xl">
+            Travel services for <span class="text-orange">every occasion</span>
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-slate-500">
+            Whether you are travelling alone, with family or with a group, tell us what you need.
+          </p>
+        </div>
+
+        <!-- All 9 services rendered from data.js -->
+        <div id="serviceGrid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-forest px-4 py-20 text-white sm:px-8 sm:py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto mb-12 max-w-2xl text-center" data-animate>
+          <span class="text-[10px] font-extrabold tracking-[.2em] text-mint">HOW IT WORKS</span>
+          <h2 class="mt-3 font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Your trip starts in <span class="text-mint">three simple steps</span>
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-white/65">
+            Share your travel requirements and discuss the available arrangements directly.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <article class="relative rounded-3xl border border-white/15 bg-white/5 p-7 transition hover:-translate-y-1" data-animate>
+            <span class="absolute right-6 top-4 font-heading text-4xl font-extrabold text-white/15">01</span>
+            <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-mint text-xl text-forest"><i class="fa-solid fa-comments"></i></span>
+            <h3 class="mt-6 font-heading text-lg font-extrabold">Tell us your plans</h3>
+            <p class="mt-3 text-sm leading-7 text-white/65">Share your destination, travel dates, group size and preferences.</p>
+          </article>
+
+          <article class="relative rounded-3xl border border-white/15 bg-white/5 p-7 transition hover:-translate-y-1" data-animate>
+            <span class="absolute right-6 top-4 font-heading text-4xl font-extrabold text-white/15">02</span>
+            <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-mint text-xl text-forest"><i class="fa-solid fa-clipboard-list"></i></span>
+            <h3 class="mt-6 font-heading text-lg font-extrabold">Discuss arrangements</h3>
+            <p class="mt-3 text-sm leading-7 text-white/65">Talk through suitable travel, car rental, hotel or tour options.</p>
+          </article>
+
+          <article class="relative rounded-3xl border border-white/15 bg-white/5 p-7 transition hover:-translate-y-1" data-animate>
+            <span class="absolute right-6 top-4 font-heading text-4xl font-extrabold text-white/15">03</span>
+            <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-mint text-xl text-forest"><i class="fa-solid fa-suitcase-rolling"></i></span>
+            <h3 class="mt-6 font-heading text-lg font-extrabold">Get ready to go</h3>
+            <p class="mt-3 text-sm leading-7 text-white/65">Confirm the details directly with us before your journey begins.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews" class="bg-sand px-4 py-20 sm:px-8 sm:py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto mb-12 max-w-2xl text-center" data-animate>
+          <span class="text-[10px] font-extrabold tracking-[.2em] text-orange">TRAVELLER FEEDBACK</span>
+          <h2 class="mt-3 font-heading text-3xl font-extrabold tracking-tight text-forest sm:text-4xl">
+            Kind words from <span class="text-orange">our customers</span>
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-slate-500">
+            Customer feedback shared about their experience with our travel service.
+          </p>
+        </div>
+
+        <div id="reviewGrid" class="grid grid-cols-1 gap-5 md:grid-cols-3"></div>
+
+        <p class="mt-7 text-center text-[10px] leading-5 text-slate-500">
+          Reviews displayed here are provided by the business. Verify the latest customer feedback on Google.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+
+
+<!-- FAQ SECTION -->
+<section id="faqs" class="bg-white px-4 py-20 sm:px-8 sm:py-24">
+  <div class="mx-auto max-w-7xl">
+
+    <!-- Section Heading -->
+    <div class="mx-auto mb-14 max-w-2xl text-center" data-animate>
+      <span class="inline-flex items-center gap-2 rounded-full bg-orange-50 px-4 py-2 text-[10px] font-extrabold tracking-[.2em] text-orange">
+        <i class="fa-solid fa-compass"></i>
+        TRAVEL SUPPORT
+      </span>
+
+      <h2 class="mt-5 font-heading text-3xl font-extrabold tracking-tight text-forest sm:text-4xl lg:text-5xl">
+        Frequently asked
+        <span class="text-orange">questions</span>
+      </h2>
+
+      <p class="mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
+        Planning your next journey? Find answers to common questions about
+        our travel services, car rentals, destinations, and trip arrangements.
+      </p>
+    </div>
+
+    <!-- FAQ Layout -->
+    <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+
+      <!-- Left Information Panel -->
+      <div class="relative overflow-hidden rounded-3xl bg-forest p-7 text-white sm:p-10" data-animate>
+        <div class="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/5"></div>
+        <div class="absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-orange/10"></div>
+
+        <div class="relative z-10">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange text-xl text-white">
+            <i class="fa-regular fa-circle-question"></i>
+          </div>
+
+          <p class="mt-7 text-[10px] font-extrabold tracking-[.2em] text-orange">
+            WE'RE HERE TO HELP
+          </p>
+
+          <h3 class="mt-3 font-heading text-2xl font-extrabold leading-tight sm:text-3xl">
+            Let's plan a trip
+            <span class="text-orange">you'll remember.</span>
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-white/75">
+            Every journey is different. Contact our team to discuss your
+            destination, transportation, hotel enquiries, or travel plans.
+          </p>
+
+          <a href="#contact"
+             class="mt-7 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-orange px-5 py-4 text-sm font-bold text-white transition hover:bg-orange-600 sm:w-auto">
+            Ask us a question
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <div class="my-7 h-px bg-white/15"></div>
+
+          <div class="flex items-start gap-3">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-orange">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <div>
+              <p class="text-sm font-bold">Need personal assistance?</p>
+              <p class="mt-1 text-xs leading-6 text-white/65">
+                Send us your enquiry and we'll help you discuss your travel arrangements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMPORTANT: Keep this ID only on the FAQ items container -->
+      <div id="faqList" class="space-y-4" data-animate></div>
+
+    </div>
+
+    <!-- Bottom Note -->
+    <div class="mt-12 flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
+      <i class="fa-solid fa-circle-info text-orange"></i>
+      <p class="text-xs leading-6 text-slate-500 sm:text-sm">
+        Still have questions?
+        <a href="#contact" class="font-bold text-forest underline decoration-orange decoration-2 underline-offset-4 hover:text-orange">
+          Contact Ebenezer Tour and Travels
+        </a>
+        for assistance with your trip.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Contact / Enquiry -->
+    <section id="contact" class="bg-sand px-4 py-20 sm:px-8 sm:py-24">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mx-auto mb-12 max-w-2xl text-center" data-animate>
+          <span class="text-[10px] font-extrabold tracking-[.2em] text-orange">LET'S PLAN YOUR NEXT TRIP</span>
+          <h2 class="mt-3 font-heading text-3xl font-extrabold tracking-tight text-forest sm:text-4xl">
+            Where would you like <span class="text-orange">to go?</span>
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-slate-500">
+            Tell us a little about your plans. Your enquiry will open in WhatsApp so you can send it directly to us.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 items-start gap-7 lg:grid-cols-[.85fr_1.15fr]">
+
+          <!-- Contact details -->
+          <div class="space-y-4" data-animate>
+            <div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sand text-lg text-orange"><i class="fa-solid fa-phone"></i></span>
+              <div>
+                <small class="block text-[10px] font-extrabold tracking-widest text-slate-500">CALL US</small>
+                <a data-phone-link href="tel:+916370555619" data-phone-display class="mt-2 inline-block text-sm font-extrabold text-forest hover:text-orange">063705 55619</a>
+              </div>
+            </div>
+
+            <div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sand text-lg text-orange"><i class="fa-solid fa-location-dot"></i></span>
+              <div class="min-w-0">
+                <small class="block text-[10px] font-extrabold tracking-widest text-slate-500">VISIT OUR OFFICE</small>
+                <p data-address class="mt-2 break-words text-sm leading-7 text-slate-600">7Q32+5V8, Kalinga Vihar Rd, Kalinga Vihar LIG, Kalinganagar, Bhubaneswar, Sijuput, Odisha 751028</p>
+                <a data-maps-link href="https://www.google.com/maps/place/EBENEZER+TOUR+AND+TRAVELS/" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-2 text-xs font-bold text-orange">
+                  Get directions <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sand text-lg text-orange"><i class="fa-brands fa-whatsapp"></i></span>
+              <div>
+                <small class="block text-[10px] font-extrabold tracking-widest text-slate-500">QUICK ENQUIRIES</small>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Message us on WhatsApp to discuss your trip.</p>
+                <a data-whatsapp-link href="#contact" class="mt-2 inline-flex items-center gap-2 text-xs font-bold text-orange">
+                  Chat with us <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 rounded-2xl border border-emerald-800/10 bg-white/70 p-4 text-xs leading-6 text-slate-500">
+              <i class="fa-solid fa-circle-info mt-1 text-orange"></i>
+              <p>Submitting the form opens WhatsApp with your details. Review and send the message to complete your enquiry.</p>
+            </div>
+          </div>
+
+          <!-- WhatsApp Enquiry Form -->
+          <form id="enquiryForm" class="rounded-3xl border border-slate-200 bg-white p-5 shadow-card sm:p-8" data-animate>
+            <div class="mb-7 flex items-center gap-4">
+              <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest text-lg text-mint"><i class="fa-solid fa-paper-plane"></i></span>
+              <div>
+                <h3 class="font-heading text-xl font-extrabold text-forest">Plan your trip</h3>
+                <p class="mt-1 text-xs text-slate-500">Fill in your travel preferences below.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label for="fullName" class="mb-2 block text-xs font-bold text-forest">Your name *</label>
+                <input id="fullName" name="fullName" type="text" placeholder="Enter your name" autocomplete="name" maxlength="100" required class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-orange focus:ring-4 focus:ring-emerald-800/10">
+              </div>
+
+              <div>
+                <label for="phone" class="mb-2 block text-xs font-bold text-forest">Phone number *</label>
+                <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" autocomplete="tel" maxlength="20" required class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-orange focus:ring-4 focus:ring-emerald-800/10">
+              </div>
+
+              <div>
+                <label for="destination" class="mb-2 block text-xs font-bold text-forest">Destination *</label>
+                <input id="destination" name="destination" type="text" placeholder="Where do you want to go?" maxlength="150" required class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-orange focus:ring-4 focus:ring-emerald-800/10">
+              </div>
+
+              <div>
+                <label for="serviceType" class="mb-2 block text-xs font-bold text-forest">Service required *</label>
+                <select id="serviceType" name="serviceType" required class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-orange focus:ring-4 focus:ring-emerald-800/10">
+                  <option value="">Choose a service</option>
+                  <option>Travel Agency</option>
+                  <option>Car Rental</option>
+                  <option>Couples Trips</option>
+                  <option>Day Trips</option>
+                  <option>Family Trips</option>
+                  <option>Group Travel</option>
+                  <option>Honeymoons</option>
+                  <option>Hotels</option>
+                  <option>Tours</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="travelDate" class="mb-2 block text-xs font-bold text-forest">Preferred travel date</label>
+                <input id="travelDate" name="travelDate" type="date" class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-orange focus:ring-4 focus:ring-emerald-800/10">
+              </div>
+
+              <div>
+                <label for="travellers" class="mb-2 block text-xs font-bold text-forest">Number of travellers</label>
+                <select id="travellers" name="travellers" class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-orange focus:ring-4 focus:ring-emerald-800/10">
+                  <option value="">Select group size</option>
+                  <option>1 traveller</option>
+                  <option>2 travellers</option>
+                  <option>3–5 travellers</option>
+                  <option>6–10 travellers</option>
+                  <option>More than 10</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <label for="message" class="mb-2 block text-xs font-bold text-forest">Additional details</label>
+              <textarea id="message" name="message" rows="4" maxlength="1000" placeholder="Tell us about your plans, budget or preferences..." class="w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-orange focus:ring-4 focus:ring-emerald-800/10"></textarea>
+            </div>
+
+            <button type="submit" class="mt-5 flex w-full items-center justify-center gap-3 rounded-full bg-forest px-6 py-4 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-forestHover">
+              Continue to WhatsApp <i class="fa-brands fa-whatsapp text-lg"></i>
+            </button>
+
+            <p class="mt-3 text-center text-[10px] leading-5 text-slate-500">
+              Your details are used to prepare your enquiry message.
+            </p>
+            <p id="formStatus" role="status" aria-live="polite" class="mt-3 text-center text-xs text-orange"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Map -->
+    <section class="bg-white px-4 pb-10 pt-12 sm:px-8">
+      <div class="mx-auto mb-6 flex max-w-7xl flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <div>
+          <span class="text-[10px] font-extrabold tracking-[.2em] text-orange">FIND US</span>
+          <h2 class="mt-2 font-heading text-2xl font-extrabold text-forest sm:text-3xl">Visit our location</h2>
+        </div>
+        <a data-maps-link href="https://www.google.com/maps/place/EBENEZER+TOUR+AND+TRAVELS/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-3 text-xs font-bold text-white transition hover:bg-forestHover">
+          Open Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+
+      <iframe
+        title="EBENEZER TOUR AND TRAVELS location map"
+        src="https://maps.google.com/maps?q=EBENEZER%20TOUR%20AND%20TRAVELS%2C%20Kalinga%20Vihar%2C%20Bhubaneswar%2C%20Odisha&t=&z=14&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+        class="h-[300px] w-full border-0 sm:h-[380px]">
+      </iframe>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-forest text-white">
+    <div class="mx-auto grid max-w-7xl grid-cols-2 gap-9 px-5 py-14 sm:px-8 md:grid-cols-4 lg:gap-12">
+
+      <div class="col-span-2 md:col-span-1">
+        <a href="#home" class="inline-flex items-center gap-3">
+          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-xl text-mint"><i class="fa-solid fa-compass"></i></span>
+          <span>
+            <strong class="block font-heading text-sm font-extrabold">EBENEZER</strong>
+            <small class="mt-1 block text-[9px] font-bold tracking-[.16em] text-white/60">TOUR AND TRAVELS</small>
+          </span>
+        </a>
+        <p class="mt-5 max-w-xs text-xs leading-7 text-white/65">
+          Making it easier to explore places, plan journeys and create lasting memories.
+        </p>
+        <a data-whatsapp-link href="#contact" class="mt-5 inline-flex items-center gap-2 rounded-xl border border-white/20 px-4 py-3 text-xs font-bold text-mint transition hover:bg-white/10">
+          <i class="fa-brands fa-whatsapp text-base"></i> Enquire on WhatsApp
+        </a>
+      </div>
+
+      <div>
+        <h3 class="mb-5 font-heading text-sm font-extrabold">Explore</h3>
+        <div class="space-y-3 text-xs text-white/65">
+          <a href="#home" class="block hover:text-mint">Home</a>
+          <a href="#destinations" class="block hover:text-mint">Destinations</a>
+          <a href="#about" class="block hover:text-mint">About us</a>
+          <a href="#reviews" class="block hover:text-mint">Customer reviews</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="mb-5 font-heading text-sm font-extrabold">Our services</h3>
+        <div class="space-y-3 text-xs text-white/65">
+          <a href="#services" class="block hover:text-mint">Car rental</a>
+          <a href="#services" class="block hover:text-mint">Family trips</a>
+          <a href="#services" class="block hover:text-mint">Honeymoons</a>
+          <a href="#services" class="block hover:text-mint">Hotels and tours</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="mb-5 font-heading text-sm font-extrabold">Contact</h3>
+        <div class="space-y-4 text-xs leading-6 text-white/65">
+          <a data-phone-link href="tel:+916370555619" class="flex items-start gap-3 hover:text-mint">
+            <i class="fa-solid fa-phone mt-1 text-mint"></i>
+            <span data-phone-display>063705 55619</span>
+          </a>
+          <p class="flex items-start gap-3">
+            <i class="fa-solid fa-location-dot mt-1 text-mint"></i>
+            <span data-address>Kalinga Vihar, Bhubaneswar, Odisha</span>
+          </p>
+          <a data-maps-link href="https://www.google.com/maps/place/EBENEZER+TOUR+AND+TRAVELS/" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 hover:text-mint">
+            <i class="fa-solid fa-map mt-1 text-mint"></i> View on map
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-5 py-5 text-[10px] text-white/55 sm:flex-row sm:items-center sm:px-8">
+        <p>© <span id="currentYear"></span> <span data-business-name>EBENEZER TOUR AND TRAVELS</span>. All rights reserved.</p>
+        <a href="#home" class="hover:text-mint">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a data-whatsapp-link href="#contact" aria-label="Contact us on WhatsApp" class="whatsapp-pulse fixed bottom-5 right-5 z-40 inline-flex items-center gap-3 rounded-full bg-[#25d366] px-4 py-4 text-sm font-extrabold text-[#063b1b] transition hover:scale-105 sm:bottom-6 sm:right-6">
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+    <span class="hidden sm:inline">Chat with us</span>
+  </a>
+
+  <!-- Main JavaScript modules -->
+  <script type="module" src="assets/js/main.js"></script>
+
+  <!-- Fallback animation observer for elements in this HTML -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll("[data-animate]");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        elements.forEach((element) => element.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -25px 0px" });
+
+      elements.forEach((element) => observer.observe(element));
+    });
+  </script>
+</body>
+</html>
